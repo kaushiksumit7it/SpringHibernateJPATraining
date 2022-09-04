@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <bean id="eddrs"  class="com.autowirepack.bean.Address">
+	   	<property name="doorno" value="1-121-A"/>
+	   	<property name="city" value="Hyderabad"/>
+   </bean>
+   
+    <bean id="eacc"  class="com.autowirepack.bean.Account">
+	   	<property name="accNo" value="1001"/>
+	   	<property name="accName" value="Saving"/>
+	   	<property name="balance" value="12000.00"/>
+   </bean>
+  
+    <bean id="eacc2"  class="com.autowirepack.bean.Account">
+	   	<property name="accNo" value="1002"/>
+	   	<property name="accName" value="Current"/>
+	   	<property name="balance" value="120000.00"/>
+   </bean>
+   
+   <bean id="empObj" class="com.autowirepack.bean.Employee" autowire="byName">
+   		<property name="empNo" value="Emp001"/>
+	   	<property name="empName" value="Sahasra"/>	  
+   </bean>
+   
+    
+   <bean id="eaccs"  class="com.autowirepack.bean.Account2">
+	   	<constructor-arg name="accNo" value="1002"/>
+	   	<constructor-arg name="accName" value="Current"/>
+	   	<constructor-arg name="balance" value="120000.00"/>
+   </bean>
+   
+   
+   <bean id="empObj1" class="com.autowirepack.bean.Employee2" autowire="constructor">
+   		<constructor-arg name="empNo" value="Emp002"/>
+	   	<constructor-arg name="empName" value="Lavanya"/>	  
+   </bean>
+</beans>

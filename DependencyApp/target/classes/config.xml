@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+		
+	<bean id="cusObj"  class="com.demopack.bean.Customer">
+		<constructor-arg name="cname" value="Satyam"/>
+		<constructor-arg name="phone" value="9900123456"/>
+		<constructor-arg name="loc" value="Hyderabad"/>
+	</bean>
+		
+	<bean id="BokObj" class="com.demopack.bean.Books">
+		<property name="bid" value="1001"/>
+		<property name="bname" value="Wings of Fire"/>
+		<property name="price" value="500.00"/>
+	</bean>
+	
+	
+	<bean id="acinfo"  class="com.demopack.bean.Account">
+		<property name="accNo"  value="Acc001"/>
+		<property name="accName"  value="Saving Account"/>
+		<property name="balance"  value="100000"/>
+	</bean>
+	<!-- 
+	<bean id="empObj"  class="com.demopack.bean.Employee">
+		<property name="empno"  value="1001"/>
+		<property name="empname"  value="Renuka Devi"/>
+		<property name="job"  value="HR-Manager"/>
+		<property name="salary"  value="24000"/>
+		<property name="accinfo"  ref="acinfo"/>
+	</bean>	
+	 OR
+	 -->
+	 
+	 <bean id="empObj"  class="com.demopack.bean.Employee" >
+		<property name="empno"  value="1001"/>
+		<property name="empname"  value="Renuka Devi"/>
+		<property name="job"  value="HR-Manager"/>
+		<property name="salary"  value="24000"/>
+		<property name="accinfo">
+			<ref bean="acinfo" />
+		</property>
+	</bean>
+	
+	
+	<bean id="stdObj" class="com.demopack.bean.Student">
+	
+		<property name="sid" value="1001"/>
+		<property name="sname" value="Sravan Kumar"/>
+		
+		<property name="squal">
+			<list>
+				<value>B.Tech</value>
+				<value>M.Tech</value>
+			</list>
+		</property>
+		
+		<property name="scourse">
+			<set>
+				<value>Java Full Stack</value>
+				<value>AWS</value>
+				<value>Angular</value>
+			</set>
+		</property>
+				
+		<property name="course_and_faculty">
+			<map>
+				<entry key="Java Full Stack"  value="Venugopal" />
+				<entry key="AWS"  value="Satyam" />
+				<entry key="Angular"  value="Lavanya" />
+			</map>
+		</property>
+		
+		<property name="course_and_fees">
+			<props>
+			<prop key="Java Full Stack">25000.00</prop>
+			<prop key="AWS">15000.00</prop>
+			<prop key="Angular">20000.00</prop>
+			</props>
+		</property>
+		
+	</bean>
+</beans>

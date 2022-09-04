@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:p="http://www.springframework.org/schema/p"
+   xmlns:c="http://www.springframework.org/schema/c"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+		
+
+	<bean id="bokObj" class="com.demopack.bean.Books" p:bid="1001" p:bname="Java" p:price="500.00"/>
+	<bean id="cusObj"  class="com.demopack.bean.Customer" c:cname="Sravan" c:phone="9900123456" c:loc="Hyderabad" />
+	
+	
+	
+	<bean id="EmpObj" class="com.demopack.bean.Employee">
+        <property name="empno"  value="1001"/>
+        <property name="empname"  value="Srujana"/>
+        <property name="job"  value="Developer"/>
+        <property name="salary"  value="15000"/>
+        
+        <property name="accinfo">
+            <bean class="com.demopack.bean.Account">
+                <property name="accNo" value="Acc001" />
+                <property name="accName" value="Savings" />
+                <property name="balance" value="200000" />
+            </bean>
+        </property>
+    </bean>
+	
+</beans>
